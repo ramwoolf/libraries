@@ -33,14 +33,15 @@ cd ../
 
 if [[ $TEST_ENABLE = ON ]]
 then 
-cd bin
-    if ! [[ -d tests ]] 
-    then mkdir tests
+    if ! [[ -d bin ]] 
+    then mkdir bin
     fi
-cd tests
+cd bin/tests
 for f in $(ls);
 do
     ./$f
 done;
-cd ../..
+cd ..
+rm -f *.a
+cd ..
 fi

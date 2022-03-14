@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(test_stupid_lib)
+project(test_static_lib)
 
 find_package(GTest REQUIRED)
 
