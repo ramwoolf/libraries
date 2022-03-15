@@ -15,3 +15,9 @@ add_test(${PROJECT}_Test Test_DynLib)
 
 set(INSTALL_NAME_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../bin/tests)
 install(TARGETS ${PROJECT}_Test DESTINATION ${INSTALL_NAME_DIR})
+
+add_custom_command(TARGET ${PROJECT}_Test
+                    POST_BUILD
+                    COMMAND ${PROJECT}_Test
+                    WORKING_DIRECTORY ${INSTALL_NAME_DIR}
+                    COMMENT "Running UT, ${PROJECT}_Test" VERBATIM)

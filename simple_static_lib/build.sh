@@ -11,6 +11,11 @@ TEST_ENABLE=OFF
 
 if [[ $2 = "test" ]]
 then TEST_ENABLE=ON
+     cd bin
+     if ! [[ -d tests ]] 
+     then mkdir tests
+     fi
+     cd ..
 fi
 
 BUILD_TYPE=release
@@ -31,16 +36,3 @@ cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTEST_ENABLE=$TEST
 make && make install
 cd ../
 
-if [[ $TEST_ENABLE = ON ]]
-then 
-cd bin
-    if ! [[ -d tests ]] 
-    then mkdir tests
-    fi
-cd tests
-for f in $(ls);
-do
-    ./$f
-done;
-cd ../..
-fi
