@@ -11,6 +11,9 @@ TEST_ENABLE=OFF
 
 if [[ $2 = "test" ]]
 then TEST_ENABLE=ON
+     if ! [[ -d bin ]] 
+     then mkdir bin
+     fi
      cd bin
      if ! [[ -d tests ]] 
      then mkdir tests
