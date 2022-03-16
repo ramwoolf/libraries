@@ -1,6 +1,8 @@
 #ifndef STUPID_LIB_HPP
 #define STUPID_LIB_HPP
 
+#include <string>
+
 namespace StaticLibrary
 {
 
@@ -11,6 +13,7 @@ public:
     int sub(int lhs, int rhs);
     int mul(int lhs, int rhs);
     int div(int lhs, int rhs);
+    std::string getLibNameBack(std::string const& str);
 };
 
 } // namespace StaticLibrary

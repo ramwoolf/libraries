@@ -23,4 +23,9 @@ int DynamicLib::div(int lhs, int rhs)
     return lhs / rhs;
 }
 
+std::string DynamicLib::getLibNameBack(std::string const& str)
+{
+    return "From shared lib: " + str;
+}
+
 } // namespace DynamicLibrary

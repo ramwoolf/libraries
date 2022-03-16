@@ -33,5 +33,14 @@ TEST_F(Test_StLib, TestAdd)
     ASSERT_EQ(res, awaited_result);
 }
 
+TEST_F(Test_StLib, TestGetLibName)
+{
+    std::string prefix = "From static lib: ";
+    std::string arg = "message";
+    StLib st_lib;
+    auto result = st_lib.getLibNameBack(arg);
+    ASSERT_STREQ(result.c_str(), (prefix + arg).c_str());
+}
+
 } // namespace Testing
 } // namespace StaticLibrary
